@@ -1,0 +1,15 @@
+header {
+}
+
+main {
+    top: 60px;
+}
+
+aside {
+    top: 60px;    
+}
+
+footer {
+    position: fixed;
+    bottom: 0px;
+}
