@@ -1,11 +1,15 @@
-header {
+header {}
+
+main {}
+
+aside {}
+
+.navbar {
+    background-color: #00d1b2;
+    border-radius: 5px;
 }
 
-main {
-    top: 60px;
+.navbar .navbar-brand a {
+    color: white;
+    font-size: 20px;
 }
-
-aside {
-    top: 60px;    
-}
-

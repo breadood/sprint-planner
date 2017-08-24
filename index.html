@@ -5,34 +5,65 @@
     <!-- meta -->
     <title>Sprint Planner</title>
     <link rel="stylesheet" href="assets/css/reset.css">
-    <link rel="stylesheet" href="assets/css/bootstrap.css">
+    <link rel="stylesheet" href="assets/css/font-awesome.css">
+    <link rel="stylesheet" href="assets/css/bulma.css">
     <link rel="stylesheet" href="assets/css/main.css">
 </head>
 
 <body>
     <header>
-        <nav class="navbar navbar-fixed-top">
-           <div class="container-fluid">
-               <a class="navbar-brand" href="#">Sprint Planner</a>
-           </div>
+        <nav class="navbar">
+            <div class="navbar-brand">
+                <a class="navbar-item has-text-centered" href="#"><strong>Sprint Planner</strong></a>
+            </div>
         </nav>
     </header>
+    <div class="columns">
+        <main class="column is-8">
+            <section class="section members-component">
+                <form class="member-form">
+                    <fieldset>
+                        <label for="member" class="label">Add a Member</label>
+                        <div class="field has-addons">
+                            <div class="control has-icons-left">
+                                <input class="input is-primary" type="text" placeholder="Add a member here">
+                                <span class="icon is-small is-left">
+                                      <i class="fa fa-user-circle"></i>
+                                    </span>
+                            </div>
+                            <div class="control">
+                                <button type="submit" class="button is-primary">
+                                    Add
+                                </button>
+                            </div>
+                        </div>
+                    </fieldset>
 
-    <main class="col-md-8 container">
-        <p>This is the main</p>
-    </main>
+                </form>
 
-    <aside class="col-md-3 col-md-offset-1">
-        <p>This is an aside</p>
-    </aside>
+                <div class="member-container">
+                    <p>Member Container</p>
+                </div>
+            </section>
 
-    <footer class="navbar navbar-fixed-bottom">
-        <p>This is a footer</p>
+            <section class="section planner-component">
+
+            </section>
+        </main>
+
+        <aside class="column is-3 is-offset-1">
+            <section class="section task-component"></section>
+        </aside>
+    </div>
+
+    <footer class="footer">
+        <div class="container has-text-centered">
+            <p>This is a footer</p>
+        </div>
     </footer>
 
     <div class="scripts">
         <script src="js/libs/jquery-3.2.1.js"></script>
-        <script src="js/libs/bootstrap.js"></script>
     </div>
 </body>
 
