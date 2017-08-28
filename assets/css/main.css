@@ -13,3 +13,16 @@ aside {}
     color: white;
     font-size: 20px;
 }
+
+.member-container {
+    padding-top: 20px;
+}
+
+.task-container {
+    padding-top: 20px;
+}
+
+.input-field {
+    display: inline-block;
+    padding-right: 40px;
+}

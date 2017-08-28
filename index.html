@@ -21,46 +21,122 @@
     <div class="columns">
         <main class="column is-8">
             <section class="section members-component">
-                <form class="member-form">
-                    <fieldset>
-                        <label for="member" class="label">Add a Member</label>
-                        <div class="field has-addons">
-                            <div class="control has-icons-left">
-                                <input class="input is-primary" type="text" placeholder="Add a member here">
-                                <span class="icon is-small is-left">
+                <div class="member-form">
+                    <form class="member-form">
+                        <fieldset>
+                            <label for="member" class="label">Add a Member</label>
+                            <div class="field has-addons">
+                                <div class="control has-icons-left">
+                                    <input class="input is-primary" type="text" placeholder="Add a member here">
+                                    <span class="icon is-small is-left">
                                       <i class="fa fa-user-circle"></i>
                                     </span>
-                            </div>
-                            <div class="control">
-                                <button type="submit" class="button is-primary">
+                                </div>
+                                <div class="control">
+                                    <button type="submit" class="button is-primary">
                                     Add
                                 </button>
+                                </div>
                             </div>
-                        </div>
-                    </fieldset>
+                        </fieldset>
+                    </form>
+                </div>
 
-                </form>
 
                 <div class="member-container">
-                    <p>Member Container</p>
+                    <div class="panel">
+                        <p class="panel-heading">
+                            <span class="icon"><i class="fa fa-user-circle"></i></span> Members
+                        </p>
+                        <div class="panel-block">Some Member</div>
+                    </div>
                 </div>
             </section>
 
             <section class="section planner-component">
+                <div class="calendar-form">
+                    <form class="calendar-form">
+                        <fieldset class="">
+                            <div class="input-field start-date">
+                                <label for="date" class="label">Start Date</label>
+                                <div class="field has-addons">
+                                    <div class="control has-icons-left">
+                                        <input class="input is-primary" type="date" placeholder="">
+                                        <span class="icon is-small is-left">
+                                      <i class="fa fa-calendar"></i>
+                                    </span>
+                                    </div>
+                                    <div class="control">
+                                        <button type="submit" class="button is-primary">
+                                        Today
+                                    </button>
+                                    </div>
+                                </div>
+                            </div>
 
+                            <div class="input-field end-date">
+                                <label for="date" class="label">End Date</label>
+                                <div class="field has-addons">
+                                    <div class="control has-icons-left">
+                                        <input class="input is-primary" type="date" placeholder="">
+                                        <span class="icon is-small is-left">
+                                      <i class="fa fa-calendar"></i>
+                                    </span>
+                                    </div>
+                                    <div class="control">
+                                        <button type="submit" class="button is-primary">
+                                        Today
+                                    </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+                
+                <div class="calendar"></div>
             </section>
         </main>
 
         <aside class="column is-3 is-offset-1">
-            <section class="section task-component"></section>
+            <section class="section task-component">
+                <div class="task-form">
+                    <form class="task-form">
+                        <fieldset>
+                            <label for="task" class="label">Add a Task</label>
+                            <div class="field has-addons">
+                                <div class="control has-icons-left">
+                                    <input class="input is-primary" type="text" placeholder="Add a task here">
+                                    <span class="icon is-small is-left">
+                                      <i class="fa fa-tasks"></i>
+                                    </span>
+                                </div>
+                                <div class="control">
+                                    <button type="submit" class="button is-primary">
+                                    Add
+                                </button>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+
+                <div class="task-container">
+                    <div class="panel">
+                        <p class="panel-heading">
+                            <span class="icon"><i class="fa fa-tasks"></i></span> Tasks</p>
+                        <div class="panel-block">Some Task</div>
+                    </div>
+                </div>
+            </section>
         </aside>
     </div>
 
     <footer class="footer">
-        <div class="container has-text-centered">
-            <p>This is a footer</p>
-        </div>
-    </footer>
+            <div class="container has-text-centered">
+                <p>This is a footer</p>
+            </div>
+        </footer>
 
     <div class="scripts">
         <script src="js/libs/jquery-3.2.1.js"></script>
