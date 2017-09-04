@@ -1,12 +1,13 @@
-header {}
+.main {
+    margin-top: 20px;
+}
 
-main {}
-
-aside {}
+.footer {
+    margin-top: 20px;    
+}
 
 .navbar {
     background-color: #00d1b2;
-    border-radius: 5px;
 }
 
 .navbar .navbar-brand a {
@@ -15,14 +16,43 @@ aside {}
 }
 
 .member-container {
-    padding-top: 20px;
+    margin-top: 20px;
 }
 
 .task-container {
-    padding-top: 20px;
+    margin-top: 20px;
 }
 
 .input-field {
     display: inline-block;
-    padding-right: 40px;
+    margin-right: 40px;
+}
+
+button.delete {
+    margin-left: auto;
+    float: right;
+}
+
+.member-container progress.progress {
+    margin: 0 10px 0 10px;
+}
+
+.calendar-container {
+    margin-top: 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.box.day {
+    width: auto;
+    height: 200px;
+}
+
+.box.member-list {
+    width: 110px;
+}
+
+.box.calendar-header {
+    margin-top: 20px;
+    margin-bottom: 0;
 }

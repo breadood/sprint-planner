@@ -8,7 +8,6 @@ taskForm.find("button").click(addTask);
 function addTask(event) {
     var task = taskForm.find("input");
     var taskName = task.val();
-    // add member to member container
-    var newBlock = '<div class="panel-block">' + taskName + '</div>';
+    var newBlock = '<div class="panel-block">' + taskName + '<button class="delete is-small"></button></div>';
     taskContainer.find('.panel').append(newBlock);
 }

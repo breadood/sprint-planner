@@ -11,130 +11,148 @@
 </head>
 
 <body>
-    <header>
+    <header class="header">
         <nav class="navbar">
             <div class="navbar-brand">
                 <a class="navbar-item has-text-centered" href="#"><strong>Sprint Planner</strong></a>
             </div>
         </nav>
     </header>
-    <div class="columns">
-        <main class="column is-8">
-            <section class="section members-component">
-                <div class="member-form">
-                    <form class="member-form">
-                        <fieldset>
-                            <label for="member" class="label">Add a Member</label>
-                            <div class="field has-addons">
-                                <div class="control has-icons-left">
-                                    <input class="input is-primary" type="text" placeholder="Add a member here">
-                                    <span class="icon is-small is-left">
+    <div class="main container is-fluid">
+        <div class="columns tile is-ancestor">
+            <main class="column is-8 tile is-parent is-vertical">
+                <section class="section members-component box">
+                    <div class="member-form">
+                        <form class="member-form">
+                            <fieldset>
+                                <label for="member" class="label">Add a Member</label>
+                                <div class="field has-addons">
+                                    <div class="control has-icons-left">
+                                        <input class="input is-primary" type="text" placeholder="Add a member here">
+                                        <span class="icon is-small is-left">
                                       <i class="fa fa-user-circle"></i>
                                     </span>
-                                </div>
-                                <div class="control">
-                                    <button type="button" class="button is-primary">
+                                    </div>
+                                    <div class="control">
+                                        <button type="button" class="button is-primary">
                                     Add
                                 </button>
+                                    </div>
                                 </div>
-                            </div>
-                        </fieldset>
-                    </form>
-                </div>
-
-
-                <div class="member-container">
-                    <div class="panel">
-                        <p class="panel-heading">
-                            <span class="icon"><i class="fa fa-user-circle"></i></span> Members
-                        </p>
+                            </fieldset>
+                        </form>
                     </div>
-                </div>
-            </section>
 
-            <section class="section planner-component">
-                <div class="calendar-form">
-                    <form class="calendar-form">
-                        <fieldset class="">
-                            <div class="input-field start-date">
-                                <label for="date" class="label">Start Date</label>
-                                <div class="field has-addons">
-                                    <div class="control has-icons-left">
-                                        <input class="input is-primary" type="date" placeholder="">
-                                        <span class="icon is-small is-left">
+                    <div class="member-container">
+                        <div class="panel">
+                            <p class="panel-heading">
+                                <span class="icon"><i class="fa fa-user-circle"></i></span> Members
+                            </p>
+        
+                        </div>
+                    </div>
+                </section>
+
+                <section class="section planner-component box">
+                    <div class="calendar-form">
+                        <form class="calendar-form">
+                            <fieldset class="">
+                                <div class="input-field start-date">
+                                    <label for="date" class="label">Start Date</label>
+                                    <div class="field has-addons">
+                                        <div class="control has-icons-left">
+                                            <input class="input is-primary" type="date" placeholder="">
+                                            <span class="icon is-small is-left">
                                       <i class="fa fa-calendar"></i>
                                     </span>
-                                    </div>
-                                    <div class="control">
-                                        <button type="button" class="button is-primary">
+                                        </div>
+                                        <div class="control">
+                                            <button type="button" class="button is-primary">
                                         Today
                                     </button>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
 
-                            <div class="input-field end-date">
-                                <label for="date" class="label">End Date</label>
-                                <div class="field has-addons">
-                                    <div class="control has-icons-left">
-                                        <input class="input is-primary" type="date" placeholder="">
-                                        <span class="icon is-small is-left">
+                                <div class="input-field end-date">
+                                    <label for="date" class="label">End Date</label>
+                                    <div class="field has-addons">
+                                        <div class="control has-icons-left">
+                                            <input class="input is-primary" type="date" placeholder="">
+                                            <span class="icon is-small is-left">
                                       <i class="fa fa-calendar"></i>
                                     </span>
-                                    </div>
-                                    <div class="control">
-                                        <button type="button" class="button is-primary">
+                                        </div>
+                                        <div class="control">
+                                            <button type="button" class="button is-primary">
                                         Today
                                     </button>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        </fieldset>
-                    </form>
-                </div>
-                
-                <div class="calendar"></div>
-            </section>
-        </main>
+                            </fieldset>
+                        </form>
+                    </div>
 
-        <aside class="column is-3 is-offset-1">
-            <section class="section task-component">
-                <div class="task-form">
-                    <form class="task-form">
-                        <fieldset>
-                            <label for="task" class="label">Add a Task</label>
-                            <div class="field has-addons">
-                                <div class="control has-icons-left">
-                                    <input class="input is-primary" type="text" placeholder="Add a task here">
-                                    <span class="icon is-small is-left">
+                    <div class="calendar-component">
+                       <div class="box calendar-header">Days</div>
+                        <div class="calendar-container">
+                            <div class="box member-list">Members</div>
+                            <div class="box day">Day 1</div>
+                            <div class="box day">Day 2</div>
+                            <div class="box day">Day 3</div>
+                            <div class="box day">Day 4</div>
+                            <div class="box day">Day 5</div>
+                            <div class="box day">Day 6</div>
+                            <div class="box day">Day 7</div>
+                            <div class="box day">Day 8</div>
+                            <div class="box day">Day 9</div>
+                            <div class="box day">Day 10</div>
+                        </div>
+                    </div>
+                </section>
+            </main>
+
+            <aside class="column is-3 is-offset-1 tile is-parent">
+                <section class="section task-component box">
+                    <div class="task-form">
+                        <form class="task-form">
+                            <fieldset>
+                                <label for="task" class="label">Add a Task</label>
+                                <div class="field has-addons">
+                                    <div class="control has-icons-left">
+                                        <input class="input is-primary" type="text" placeholder="Add a task here">
+                                        <span class="icon is-small is-left">
                                       <i class="fa fa-tasks"></i>
                                     </span>
-                                </div>
-                                <div class="control">
-                                    <button type="button" class="button is-primary">
+                                    </div>
+                                    <div class="control">
+                                        <button type="button" class="button is-primary">
                                     Add
                                 </button>
+                                    </div>
                                 </div>
-                            </div>
-                        </fieldset>
-                    </form>
-                </div>
-
-                <div class="task-container">
-                    <div class="panel">
-                        <p class="panel-heading">
-                            <span class="icon"><i class="fa fa-tasks"></i></span> Tasks</p>
+                            </fieldset>
+                        </form>
                     </div>
-                </div>
-            </section>
-        </aside>
+
+                    <div class="task-container">
+                        <div class="panel">
+                            <p class="panel-heading">
+                                <span class="icon"><i class="fa fa-tasks"></i></span> Tasks</p>
+                        </div>
+                    </div>
+                </section>
+            </aside>
+        </div>
     </div>
 
+
     <footer class="footer">
-            <div class="container has-text-centered">
-                <p>This is a footer</p>
-            </div>
-        </footer>
+        <div class="container has-text-centered">
+            <p>This is a footer</p>
+        </div>
+    </footer>
 
     <div class="scripts">
         <script src="js/libs/jquery-3.2.1.js"></script>
