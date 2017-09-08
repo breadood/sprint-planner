@@ -15,11 +15,7 @@
     font-size: 20px;
 }
 
-.member-container {
-    margin-top: 20px;
-}
-
-.task-container {
+.storage-container {
     margin-top: 20px;
 }
 
@@ -33,7 +29,7 @@ button.delete {
     float: right;
 }
 
-.member-container progress.progress {
+.storage-container progress.progress {
     margin: 0 10px 0 10px;
 }
 
