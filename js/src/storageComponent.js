@@ -34,6 +34,7 @@ class StorageComponent {
                     var member = this.input.val(),
                         newBlock = '<div class="panel-block">' + member + '<progress class="progress is-primary is-small" value="0" max="100">0%</progress><button class="delete is-small"></button></div>';
                     this.panel.append(newBlock);
+                    this.input.val('');
                 }
             }
         },
@@ -43,6 +44,7 @@ class StorageComponent {
                     var task = this.input.val(),
                         newBlock = '<div class="panel-block">' + task + '<button class="delete is-small"></button></div>';
                     this.panel.append(newBlock);
+                    this.input.val('');
                 }
             }
         };
