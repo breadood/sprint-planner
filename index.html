@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="assets/css/font-awesome.css">
     <link rel="stylesheet" href="assets/css/bulma.css">
     <link rel="stylesheet" href="assets/css/main.css">
+    <script src="js/libs/jquery-3.2.1.js"></script>
 </head>
 
 <body>
@@ -28,7 +29,7 @@
                                 <label for="member" class="label">Add a Member</label>
                                 <div class="field has-addons">
                                     <div class="control has-icons-left">
-                                        <input class="input is-primary" type="text" placeholder="Add a member here">
+                                        <input class="input is-primary" type="text" placeholder="Add a member">
                                         <span class="icon is-small is-left">
                                       <i class="fa fa-user-circle"></i>
                                     </span>
@@ -57,7 +58,7 @@
                     <div class="calendar-form">
                         <form class="calendar-form">
                             <fieldset class="">
-                                <div class="input-field start-date">
+                                <div class="input-field start-date date-component">
                                     <label for="date" class="label">Start Date</label>
                                     <div class="field has-addons">
                                         <div class="control has-icons-left">
@@ -74,7 +75,7 @@
                                     </div>
                                 </div>
 
-                                <div class="input-field end-date">
+                                <div class="input-field end-date date-component">
                                     <label for="date" class="label">End Date</label>
                                     <div class="field has-addons">
                                         <div class="control has-icons-left">
@@ -133,7 +134,7 @@
                                 <label for="task" class="label">Add a Task</label>
                                 <div class="field has-addons">
                                     <div class="control has-icons-left">
-                                        <input class="input is-primary" type="text" placeholder="Add a task here">
+                                        <input class="input is-primary" type="text" placeholder="Add a task">
                                         <span class="icon is-small is-left">
                                       <i class="fa fa-tasks"></i>
                                     </span>
@@ -167,8 +168,11 @@
     </footer>
 
     <div class="scripts">
-        <script src="js/libs/jquery-3.2.1.js"></script>
+        
         <script src="js/src/storageComponent.js"></script>
+        <script src="js/src/dateComponent.js"></script>
+        <script src="js/src/plannerComponent.js"></script>
+        <script src="js/src/documentReady.js"></script>
     </div>
 </body>
 
