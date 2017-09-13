@@ -1,8 +1,9 @@
 'use strict';
+
 class PlannerComponent {
-    constructor(item, config) {
-        this.$el = $(item);
-        this.el = item;
+    constructor(el, config) {
+        this.$el = $(el);
+        this.el = el;
         this.events = config.events || {};
 
 
@@ -15,6 +16,7 @@ class PlannerComponent {
         this.initializeDates();
 
         // initialize calendar component
+        this.initializeCalendar();
     }
     
     initializeDates() {
@@ -23,8 +25,9 @@ class PlannerComponent {
 
         var today = new Date(),
             endDay = new Date(),
-            setToday = function () {
+            setToday = function (event) {
                 this.setDate(new Date().toLocalDate());
+                $(this.input).trigger("change");
             };
         endDay.setDate(today.getDate() + 14);
         var startConfig = {
@@ -45,5 +48,15 @@ class PlannerComponent {
             }
         this.startDate = new DateComponent(startDate.get(0), startConfig);
         this.endDate = new DateComponent(endDate.get(0), endConfig);
+    }
+    
+    initializeCalendar() {
+        var calendar = this.$el.find('.calendar-component').get(0);
+        var config = {
+            startDate: this.startDate.getDate(),
+            endDate: this.endDate.getDate(),
+            members: []
+        };
+        this.calendar = new CalendarComponent(calendar, config);
     }
 }

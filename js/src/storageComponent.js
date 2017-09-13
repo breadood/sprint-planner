@@ -1,8 +1,9 @@
 'use strict';
+
 class StorageComponent {
-    constructor(item, config) {
-        this.$el = $(item);
-        this.el = item;
+    constructor(el, config) {
+        this.$el = $(el);
+        this.el = el;
         this.events = config.events || {};
 
         this.initialize();

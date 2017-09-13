@@ -1,10 +1,14 @@
 'use strict';
+
 $(document).ready(function () {
     // add prototypical method for Date
     Date.prototype.toLocalDate = function () {
         var local = new Date(this);
         local.setMinutes(this.getMinutes() - this.getTimezoneOffset());
         return local.toJSON().slice(0, 10);
+    };
+    Date.prototype.addDays = function (days) {
+        this.setDate(this.getDate() + days);  
     };
 
     // initialize planner component

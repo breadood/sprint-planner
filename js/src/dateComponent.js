@@ -1,29 +1,33 @@
 'use strict';
+
 class DateComponent {
-    constructor(item, config) {
-        this.$el = $(item);
-        this.el = item;
+    constructor(el, config) {
+        this.$el = $(el);
+        this.el = el;
         this.events = config.events || {};
         this.default = config.default || {};
+        
 
         this.initialize();
         this.bindEvents();
     }
 
     initialize() {
-        this.$el.find("input").val(this.default.date);
+        this.input = this.$el.find("input");
+        this.button = this.$el.find("button");
+        this.input.val(this.default.date);
     }
 
     bindEvents() {
-        for (var event in this.events)
-            this.$el.find("button").on(event, (this.events[event]).bind(this));
+        this.button.on('click', (this.events['click']).bind(this));
+        this.input.on('change', function() {console.log("changed!")})
     }
 
     getDate() {
-        return this.$el.find("input").val();
+        return this.input.val();
     }
 
     setDate(date) {
-        this.$el.find("input").val(date);
+        this.input.val(date);
     }
 }
