@@ -10,7 +10,12 @@ $(document).ready(function () {
     Date.prototype.addDays = function (days) {
         this.setDate(this.getDate() + days);  
     };
-
+    Date.prototype.getUTCDayString = function () {
+        var week = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
+            ofDay = this.getUTCDay();
+        return week[ofDay];
+    };
+    
     // initialize planner component
     (function () {
         var plannerComponent = $("section.planner-component");

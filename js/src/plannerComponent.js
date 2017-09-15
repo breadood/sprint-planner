@@ -8,7 +8,7 @@ class PlannerComponent {
 
 
         this.initialize();
-        //        this.bindEvents();
+        this.bindEvents();
     }
 
     initialize() {
@@ -58,5 +58,14 @@ class PlannerComponent {
             members: []
         };
         this.calendar = new CalendarComponent(calendar, config);
+    }
+    
+    bindEvents() {
+        this.startDate.input.on('change', function() {
+            this.calendar.changeStartDate.call(this.calendar, this.startDate.getDate());
+        }.bind(this));
+        this.endDate.input.on('change', function () {
+            this.calendar.changeEndDate.call(this.calendar, this.endDate.getDate());
+        }.bind(this));
     }
 }

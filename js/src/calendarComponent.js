@@ -21,9 +21,10 @@ class CalendarComponent {
     bindEvents() {
         
     }
+    
     initializeHeader() {
-        var header = '<div class="box calendar-header"><div class="member-title">Members</div></div>';
-        var container = '<div class="calendar-container"></div>';
+        var header = '<ul class="box calendar-header"></ul>';
+        var container = '<ul class="calendar-container"></ul>';
         
         this.$el.append(header);
         this.$el.append(container);
@@ -33,18 +34,24 @@ class CalendarComponent {
     }
     
     initializeDayBlocks() {
-        this.container.append('<div class="box member-list"></div>');
         this.drawCalendar();
     }
     
     drawCalendar() {
-        var today = new Date(this.startDate);
+        this.header.empty();
+        this.container.empty();
+        this.header.append('<li class="member-title">Members</li>');
+        this.container.append('<li class="box member-list"></li>');
+        
+        var today = new Date(this.startDate),
+            number = 1;
         while (today < this.endDate) {
             if (today.getUTCDay() !== 0 && today.getUTCDay() !== 6) {
-                this.header.append('<div class="day-title">Day</div>');
-                this.container.append('<div class="box day"></div>');
+                this.header.append('<li class="day-title">' + today.getUTCDayString() + '</li>');
+                this.container.append('<li class="box day">somestuff</div>');
+                number++;
             }
-            today.addDays(1);
+            today.addDays(1);   
         }
     }
     

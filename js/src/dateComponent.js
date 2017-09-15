@@ -20,7 +20,6 @@ class DateComponent {
 
     bindEvents() {
         this.button.on('click', (this.events['click']).bind(this));
-        this.input.on('change', function() {console.log("changed!")})
     }
 
     getDate() {
