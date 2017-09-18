@@ -7,19 +7,12 @@ class CalendarComponent {
         this.startDate = new Date(config.startDate); // this will be UTC date
         this.endDate = new Date(config.endDate);
         this.members = config.members;
-        //this.events = config.events || {};
         this.initialize();
-        this.bindEvents();
-        //        this.bindEvents();
     }
     
     initialize() {
         this.initializeHeader();
         this.initializeDayBlocks();
-    }
-    
-    bindEvents() {
-        
     }
     
     initializeHeader() {
@@ -48,15 +41,16 @@ class CalendarComponent {
         while (today < this.endDate) {
             if (today.getUTCDay() !== 0 && today.getUTCDay() !== 6) {
                 this.header.append('<li class="day-title">' + today.getUTCDayString() + '</li>');
-                this.container.append('<li class="box day">somestuff</div>');
+                this.container.append('<li class="box day"></div>');
                 number++;
             }
             today.addDays(1);   
         }
     }
     
-    addMember() {
-        
+    addMember(member) {
+        console.log(member);
+        this.container.find('.member-list').append('<div class="member">' + member + '</div>');
     }
     
     changeStartDate(startDate) {

@@ -1,4 +1,5 @@
 'use strict';
+var planner = {};
 
 $(document).ready(function () {
     // add prototypical method for Date
@@ -19,44 +20,30 @@ $(document).ready(function () {
     // initialize planner component
     (function () {
         var plannerComponent = $("section.planner-component");
-        new PlannerComponent(plannerComponent.get(0), {});
+        planner.planner = new PlannerComponent(plannerComponent.get(0), {});
     })();
 
     // initialize storage components
     (function () {
         // set configs
-        var els = $(".storage-component"),
-            defaultConfig = {},
-            memberConfig = {
-                events: {
-                    click: function (event) {
-                        var member = this.input.val(),
-                            newBlock = '<div class="panel-block">' + member + '<progress class="progress is-primary is-small" value="0" max="100">0%</progress><button class="delete is-small"></button></div>';
-                        this.panel.append(newBlock);
-                        this.input.val('');
-                    }
-                }
+        var memberClick = function (event) {
+                var member = this.input.val(),
+                    newBlock = '<div class="panel-block"><div class="member-name">' + member + '</div><progress class="progress is-primary is-small" value="0" max="100">0%</progress><button class="delete is-small"></button></div>';
+                this.panel.append(newBlock);
+                this.input.val('');
+                planner.planner.addMember(member);
             },
-            taskConfig = {
-                events: {
-                    click: function (event) {
-                        var task = this.input.val(),
-                            newBlock = '<div class="panel-block">' + task + '<button class="delete is-small"></button></div>';
-                        this.panel.append(newBlock);
-                        this.input.val('');
-                    }
-                }
+            taskClick = function (event) {
+                var task = this.input.val(),
+                    newBlock = '<div class="panel-block"><div class="task-name">' + task + '</div><button class="delete is-small"></button></div>';
+                this.panel.append(newBlock);
+                this.input.val('');
             };
-        // intialize with respective configs
-        for (var index = 0; index < els.length; index++) {
-            var el = els[index];
-            if ($(el).hasClass('member-component')) {
-                new StorageComponent(el, memberConfig);
-            } else if ($(el).hasClass('task-component')) {
-                new StorageComponent(el, taskConfig);
-            } else {
-                new StorageComponent(el, defaultConfig);
-            }
-        }
+        var memberComp = $(".member-component.storage-component"),
+            taskComp = $(".task-component.storage-component");
+        planner.members = new StorageComponent(memberComp, {});
+        planner.tasks = new StorageComponent(taskComp, {});
+        planner.members.button.on('click', memberClick.bind(planner.members));
+        planner.tasks.button.on('click', taskClick.bind(planner.tasks));
     })();
 })

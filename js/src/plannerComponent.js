@@ -12,10 +12,7 @@ class PlannerComponent {
     }
 
     initialize() {
-        // initialize date components
         this.initializeDates();
-
-        // initialize calendar component
         this.initializeCalendar();
     }
     
@@ -67,5 +64,9 @@ class PlannerComponent {
         this.endDate.input.on('change', function () {
             this.calendar.changeEndDate.call(this.calendar, this.endDate.getDate());
         }.bind(this));
+    }
+    
+    addMember(member) {
+        this.calendar.addMember(member);
     }
 }

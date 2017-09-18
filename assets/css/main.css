@@ -1,3 +1,4 @@
+/* Main */
 .main {
     margin-top: 20px;
 }
@@ -6,6 +7,7 @@
     margin-top: 20px;    
 }
 
+/* Navigation */
 .navbar {
     background-color: #00d1b2;
 }
@@ -14,7 +16,7 @@
     color: white;
     font-size: 20px;
 }
-
+/* Storage Component */
 .storage-container {
     margin-top: 20px;
 }
@@ -25,18 +27,34 @@
 }
 
 button.delete {
-    margin-left: auto;
+    margin-left: 20px;
+    margin-right: 0;
     float: right;
 }
 
+/* Member Component */
 .storage-container progress.progress {
-    margin: 0 10px 0 10px;
+    width: 80%;
+    margin-left: auto;
+    margin-right: 0;
+    margin-top: 0;
+    margin-bottom: 0;
 }
 
+.panel-block > .member-name {
+    margin-right: auto;
+}
+
+/* Task Component */
 .task-component {
     width: 100%;    
 }
 
+.panel-block > .task-name {
+    margin-right: auto;
+}
+
+/* Planner Component */
 .calendar-container {
     margin-top: 0;
     width: 100%;
@@ -54,7 +72,7 @@ button.delete {
 }
 
 .calendar-header > .member-title {
-    width: 10%;
+    width: 15%;
     text-align: center;
 }
 
@@ -66,18 +84,30 @@ button.delete {
 
 .box.day {
     width: auto;
-    height: 200px;
+    height: inherit;
     flex: 1;
     text-align: center;
     overflow: hidden;
 }
 
 .box.member-list {
-    width: 10%;
+    width: 15%;
     text-align: center;
 }
 
 .box.calendar-header {
     margin-top: 20px;
+    margin-bottom: 0;
+}
+
+div.member {
+    margin-top: 20px;
+}
+
+div.member:first-child {
+    margin-top: 0;
+}
+
+.calendar-container > .box:not(:last-child) {
     margin-bottom: 0;
 }
