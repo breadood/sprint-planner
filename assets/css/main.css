@@ -58,12 +58,23 @@ button.delete {
 .calendar-container {
     margin-top: 0;
     width: 100%;
+}
+
+.calendar-boxes {
     display: flex;
     flex-direction: row;
     align-items: stretch;
+    z-index: 1;
+    position: relative;
 }
 
-.calendar-header {
+.calendar-overlay {
+    z-index: 2;  
+    position: absolute;
+    top: 0;
+}
+
+ul.calendar-header {
     padding: 10px 0;
     width: 100%;
     display: flex;
@@ -101,13 +112,17 @@ button.delete {
 }
 
 div.member {
-    margin-top: 20px;
+    border-top: 1px solid #00d1b2;
+    margin-top: 10px;
+    padding-top: 10px;
 }
 
 div.member:first-child {
+    border-top: 0;
     margin-top: 0;
+    padding-top: 0;
 }
 
-.calendar-container > .box:not(:last-child) {
+.calendar-boxes > .box:not(:last-child) {
     margin-bottom: 0;
 }
