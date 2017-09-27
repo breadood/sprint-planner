@@ -6,7 +6,6 @@ class PlannerComponent {
         this.el = el;
         this.events = config.events || {};
 
-
         this.initialize();
         this.bindEvents();
     }

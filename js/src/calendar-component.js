@@ -9,37 +9,30 @@ class CalendarComponent {
         this.members = config.members;
         this.initialize();
     }
-    
+
     initialize() {
         this.header = this.$el.find('div.calendar-header');
         this.container = this.$el.find('div.calendar-container');
-        this.overlay = this.$el.find('div.calendar-overlay')
-        this.initializeHeader();
+        this.overlay = this.$el.find('div.calendar-overlay');
+        this.background = this.$el.find('div.calendar-boxes');
         this.initializeDayBlocks();
+        this.members = [];
     }
-    
-    initializeHeader() {
-//        var header = '<ul class="box calendar-header"></ul>';
-//        var boxes = '<ul class="calendar-boxes"></ul>';
-//        
-//        this.$el.append(header);
-//        this.$el.append(boxes);
-    }
-    
+
     initializeDayBlocks() {
         this.drawCalendar();
     }
-    
+
     drawCalendar() {
         var header = this.header.find('ul'),
             boxes = this.container.find('ul');
-        
+
         header.empty();
         boxes.empty();
-        
+
         header.append('<li class="member-title">Members</li>');
         boxes.append('<li class="box member-list"></li>');
-        
+
         var today = new Date(this.startDate),
             number = 1;
         while (today < this.endDate) {
@@ -48,23 +41,19 @@ class CalendarComponent {
                 boxes.append('<li class="box day"></div>');
                 number++;
             }
-            today.addDays(1);   
+            today.addDays(1);
         }
     }
-    
-    addMember(member) {
-        console.log(member);
-        // create a new member
-        // append new member
-        this.overlay.append('<div>overlay for ' + member + '</div>')
-//        this.container.find('.member-list').append('<div class="member">' + member + '</div>');
+
+    adjustHeight() {
+        this.container.height(this.overlay.height());
     }
-    
+
     changeStartDate(startDate) {
         this.startDate = new Date(startDate);
         this.drawCalendar();
     }
-    
+
     changeEndDate(endDate) {
         this.endDate = new Date(endDate);
         this.drawCalendar();
