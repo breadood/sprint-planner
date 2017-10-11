@@ -1,33 +1,22 @@
 'use strict';
 
 class Member {
-    constructor(name) {
+    constructor(name, el) {
         this.name = name;
-        this.tasks = [];
-        this.capacity = 0;
+        this.tasks = {};
+        this.capacity = 10;
         
-        // not decoupled
-        this.calendarEl = $(this.getCalendarTemplate()).appendTo(planner.planner.calendar.overlay);
-        planner.planner.calendar.adjustHeight();
-        this.containerEl = $(this.getContainerTemplate()).appendTo(planner.members.panel);
-        this.containerEl.find('button').on('click', this.removeMember.bind(this));
-        this.calendarEl.on("dragover", function(event) {
-            event.preventDefault();
-//            console.log("I got a drag");
-        })
-        this.calendarEl.on("drop", function(event) {
-            event.preventDefault();
-            console.log("hey I got a drop");
-            var data = event.originalEvent.dataTransfer.getData("text/plain");
-//            console.log("Look who called me: ");
-            console.log(JSON.parse(data));
-        })
-        // TO DO: decouple, and make sure array in parent component updates
+        this.container$el = el;
+        this.calendar$el = {};
+        
+        this.button = this.container$el.find('button');
+        this.button.on('click', this.removeMember.bind(this));
     }
     
-    addTask(task) {
-        this.tasks.push(task);
-        // update capacity
+    addTask(taskId) {
+        var task = planner.tasks.getTask(taskId);
+        this.tasks[taskId] = task;
+        this.updateCapacity();
     }
     
     getCapacity() {
@@ -35,20 +24,23 @@ class Member {
     }
     
     updateCapacity() {
-        
+        var workload = 0;
+        for (var task in this.tasks) {
+            workload += this.tasks[task].point;
+        }
+        this.container$el.find('progress').val(workload / this.capacity * 100);
     }
     
-    getContainerTemplate() {
-        return '<div class="panel-block"><div class="member-name">' + this.name + '</div><progress class="progress is-primary is-small" value="0" max="100">0%</progress><button class="delete is-small"></button></div>';
+    static getContainerTemplate(name) {
+        return '<div class="panel-block"><div class="member-name">' + name + '</div><progress class="progress is-primary is-small" value="0" max="100">0%</progress><button class="delete is-small"></button></div>';
     }
     
-    getCalendarTemplate() {
-        return '<div class="member-overlay"><div class="member-name">' + this.name + '</div>';
+    static getCalendarTemplate(name) {
+        return '<div class="member-overlay"><div class="member-name">' + name + '</div>';
     }
     
     removeMember() {
-        this.calendarEl.remove();
-        this.containerEl.remove();
-        planner.planner.calendar.adjustHeight();
+        this.calendar$el.trigger('removemember', this);
+        this.container$el.trigger('removemember', this);
     }
 }

@@ -58,4 +58,22 @@ class CalendarComponent {
         this.endDate = new Date(endDate);
         this.drawCalendar();
     }
+    
+    addMember(member) {
+        // add a member
+        member.calendar$el = $(Member.getCalendarTemplate(member.name)).appendTo(this.overlay);
+        member.calendar$el.on('removemember', function(event, member) {
+            member.calendar$el.remove();
+        });
+        
+        member.calendar$el.on("dragover", function(event) {
+            event.preventDefault();
+        })
+        member.calendar$el.on("drop", function(event) {
+            event.preventDefault();
+            var data = event.originalEvent.dataTransfer.getData("text/plain");
+            this.addTask(data);
+        }.bind(member));
+        this.adjustHeight();
+    }
 }

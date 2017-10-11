@@ -22,6 +22,7 @@
 }
 
 .input-field {
+/*    width: 30%;*/
     display: inline-block;
     margin-right: 40px;
 }
@@ -56,6 +57,7 @@ button.delete {
 }
 
 /* Planner Component */
+
 .calendar-container {
     margin-top: 0;
     width: 100%;

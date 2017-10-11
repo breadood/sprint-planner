@@ -30,4 +30,11 @@ $(document).ready(function () {
         planner.members = new MemberComponent(memberComp);
         planner.tasks = new TaskComponent(taskComp);
     })();
+    
+    // binding events
+    (function () {
+        planner.members.$el.on('addmember', function(event, member) {
+            planner.planner.addMember(member);
+        });
+    })();
 })
